@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Ticket Price Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("/static/plane.jpg") no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff4b2b;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Flight Ticket Price Prediction</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Prediction Form -->
+    <div class="container">
+        <h2>Flight Ticket Price Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="airline">Airline:</label>
+            <select id="airline" name="airline" required>
+                <option value="">Select Airline</option>
+                <option value="0">Air Asia</option>
+                <option value="1">Air India</option>
+                <option value="2">GoAir</option>
+                <option value="3">IndiGo</option>
+                <option value="4">Jet Airways</option>
+                <option value="5">Jet Airways Business</option>
+                <option value="6">Multiple carriers</option>
+                <option value="7">Multiple carriers Premium economy</option>
+                <option value="8">SpiceJet</option>
+                <option value="9">Trujet</option>
+                <option value="10">Vistara</option>
+                <option value="11">Vistara Premium economy</option>
+            </select>
+
+            <label for="source">Source:</label>
+            <select id="source" name="source" required>
+                <option value="">Select Source</option>
+                <option value="0">Bangalore</option>
+                <option value="1">Chennai</option>
+                <option value="2">Delhi</option>
+                <option value="3">Kolkata</option>
+                <option value="4">Mumbai</option>
+            </select>
+            
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination" required>
+                <option value="">Select Destination</option>
+                <option value="0">Bangalore</option>
+                <option value="1">Cochin</option>
+                <option value="2">Delhi</option>
+                <option value="3">Hyderabad</option>
+                <option value="4">Kolkata</option>
+                <option value="5">New Delhi</option>
+            </select>
+            
+
+
+            <label for="date">Date:</label>
+            <input type="number" id="date" name="date" min="1" max="31" required>
+
+            <label for="month">Month:</label>
+            <input type="number" id="month" name="month" min="1" max="12" required>
+
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" min="2024" required>
+
+            <label for="dep_hour">Departure Hour:</label>
+            <input type="number" id="dep_hour" name="dep_hour" min="0" max="23" required>
+
+            <label for="dep_mins">Departure Minutes:</label>
+            <input type="number" id="dep_mins" name="dep_mins" min="0" max="59" required>
+
+            <label for="arrival_date">Arrival Date:</label>
+            <input type="number" id="arrival_date" name="arrival_date" min="1" max="31" required>
+
+            <label for="arrival_hour">Arrival Hour:</label>
+            <input type="number" id="arrival_hour" name="arrival_hour" min="0" max="23" required>
+
+            <label for="arrival_mins">Arrival Minutes:</label>
+            <input type="number" id="arrival_mins" name="arrival_mins" min="0" max="59" required>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
